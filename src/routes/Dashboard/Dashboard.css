@@ -1,0 +1,47 @@
+/* COLORS 
+
+#D3D4D9
+#4281A4
+#FF6B6B
+#252627
+#FFF9FB
+
+*/
+
+@import "https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
+
+.tally {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.tally:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  bottom: -20px;
+  border-bottom: 1px solid #ff6b6b;
+  margin-top: -20px;
+}
+
+.buttons {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.buttons:after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    bottom: -20px;
+    border-bottom: 1px solid #4281a4;
+    margin-top: -20px;
+  }
+
+.search_button {
+  margin-left: 5px;
+}
+
