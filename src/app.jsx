@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import { ContextProvider } from "./context/GamestashContext";
 import LandingPage from './routes/LandingPage/LandingPage'
 import Dashboard from './routes/Dashboard/Dashboard'
+import ConsolePage from './routes/ConsolePage/ConsolePage'
 import Header from './components/Header/Header'
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
                 <Switch>
                     <Route exact path="/" component={LandingPage} />
                     <Route exact path="/dashboard" component={Dashboard} />
+                    <Route exact path="/consoles/:id" component={ConsolePage} />
                 </Switch>
             </Router>
         </div>

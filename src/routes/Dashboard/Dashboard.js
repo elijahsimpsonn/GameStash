@@ -5,6 +5,7 @@ import Main from '../../api/Main'
 import GameCounter from '../../components/GameCounter/GameCounter'
 import ConsoleCard from '../../components/ConsoleCard/ConsoleCard'
 import { GamestashContext } from '../../context/GamestashContext'
+import AddConsoleForm from "../../components/AddConsoleForm/AddConsoleForm";
 
 export default function Dashboard(props) {
 
@@ -14,16 +15,13 @@ export default function Dashboard(props) {
             const fetchConsoles = async () => {
                 try {
                     const response = await Main.get('/consoles')
-                    console.log(response.data.data.consoles)
+                    // console.log(response.data.data.consoles)
                     setConsoles(response.data.data.consoles)
-                    console.log(consoles)
+                    // console.log(consoles)
                 } catch(err) {}
             }
             fetchConsoles()
         }, [])
-    
-
-
 
 
     return (
@@ -47,9 +45,12 @@ export default function Dashboard(props) {
 
             <section>
                 <p>Consoles</p>
+                <AddConsoleForm/>
                 {consoles.map(console => {
                     return(
-                    <ConsoleCard name={console.name}/>
+            
+                    <ConsoleCard key={console.id} id={console.id} name={console.name}/>
+                   
                     )
                 })}
             </section>
