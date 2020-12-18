@@ -7,14 +7,14 @@ import AddGameForm from "../../components/AddGameForm/AddGameForm";
 
 const ConsolePage = () => {
   const { id } = useParams();
-  const { selectedConsole, setSelectedConsole } = useContext(GamestashContext);
+  const { selectedConsole, setSelectedConsole, setGames } = useContext(GamestashContext);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await Main.get(`/consoles/${id}`);
-        console.log(response)
         setSelectedConsole(response.data.data);
+        console.log(response)
       } catch (err) {
         console.log(err);
       }
@@ -25,7 +25,6 @@ const ConsolePage = () => {
   return <div>{selectedConsole && (
       <>
       <h1>{selectedConsole.consoles.name}</h1>
-      <p>Add A New Game</p>
       <AddGameForm/>
       <GameCard games={selectedConsole.games}/>
       </>

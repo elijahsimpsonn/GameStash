@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function GameCounter() {
+const GameCounter = () => {
     return (
         <div>
             Game Tally go Here
         </div>
     )
 }
+
+export default GameCounter

@@ -16,7 +16,7 @@
   position: relative;
 }
 
-.tally:after {
+.tally::after {
   content: "";
   position: absolute;
   width: 50%;
@@ -31,7 +31,7 @@
   position: relative;
 }
 
-.buttons:after {
+/* .tally:after {
     content: "";
     position: absolute;
     width: 50%;
@@ -39,7 +39,7 @@
     bottom: -20px;
     border-bottom: 1px solid #4281a4;
     margin-top: -20px;
-  }
+  } */
 
 .search_button {
   margin-left: 5px;
