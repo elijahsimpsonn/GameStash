@@ -1,8 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect } from "react";
 import "./Dashboard.css";
-import { Link } from "react-router-dom";
 import Main from "../../api/Main";
-import GameCounter from "../../components/GameCounter/GameCounter";
 import ConsoleCard from "../../components/ConsoleCard/ConsoleCard";
 import { GamestashContext } from "../../context/GamestashContext";
 import AddConsoleForm from "../../components/AddConsoleForm/AddConsoleForm";
@@ -32,22 +31,11 @@ export default function Dashboard(props) {
     fetchGames();
   }, []);
 
-  let tally = 0
-
   return (
     <div>
       <>
         <section className="tally">
-        
-          <GameCounter />
-        </section>
-
-        <section className="buttons">
-          <form action="">
-            {/* <Link to="search">
-              <button className="search_button">Search</button>
-            </Link> */}
-          </form>
+            <span>Total Games: {games.length}</span>
         </section>
 
         <section>

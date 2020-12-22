@@ -4,6 +4,7 @@ import { ContextProvider } from "./context/GamestashContext";
 import LandingPage from './routes/LandingPage/LandingPage'
 import Dashboard from './routes/Dashboard/Dashboard'
 import ConsolePage from './routes/ConsolePage/ConsolePage'
+import GameEdit from './routes/GameEdit/GameEdit'
 import Header from './components/Header/Header'
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
                     <Route exact path="/" component={LandingPage} />
                     <Route exact path="/dashboard" component={Dashboard} />
                     <Route exact path="/consoles/:id" component={ConsolePage} />
+                    <Route exact path="/games/:id/update" component={GameEdit} />
                 </Switch>
             </Router>
         </div>

@@ -11,6 +11,11 @@ export const ContextProvider = (props) => {
       setConsoles([...consoles, console])
   }
 
+  const addGame = (game) => {
+      setGames([...games, game])
+    //   setSelectedConsole([...selectedConsole.consoles, ...selectedConsole.games, game])
+  }
+
   const deleteConsole = (id) => {
       const consoleResult = consoles.filter(console => console.id !== id)
       const gameResult = games.filter(game => game.console_id !== id)    
@@ -36,7 +41,8 @@ export const ContextProvider = (props) => {
         setSelectedConsole,
         games,
         setGames,
-        deleteGame
+        deleteGame,
+        addGame
       }}
     >
       {props.children}

@@ -1,23 +1,23 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Main from '../../api/Main'
-import { useParams, useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import { GamestashContext } from '../../context/GamestashContext'
 
 const AddGameForm = () => {
     const { id } = useParams()
-    const location = useLocation()
-
+    const { addGame } = useContext(GamestashContext)
     const [title, setTitle] = useState("")
     const [condition, setCondition] = useState("")
 
 
-    const handleSubmitReview = async (e) => {
+    const handleSubmitGame = async (e) => {
         e.preventDefault()
         try {
         const response = await Main.post(`/consoles/${id}/addGame`, {
             title,
             condition
         })
-        window.location = location.pathname
+        addGame(response)
         } catch(err) {
             console.log(err)
         }
@@ -28,7 +28,7 @@ const AddGameForm = () => {
             <form action="">
                 <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="title"/>
                 <input value={condition} onChange={(e) => setCondition(e.target.value)} type="text" placeholder="condition"/>
-                <button onClick={handleSubmitReview}>Add Game</button>
+                <button onClick={handleSubmitGame}>Add Game</button>
             </form>
         </div>
     )
