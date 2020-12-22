@@ -14,7 +14,6 @@ const ConsolePage = () => {
       try {
         const response = await Main.get(`/consoles/${id}`);
         setSelectedConsole(response.data.data);
-        console.log(response)
       } catch (err) {
         console.log(err);
       }
@@ -26,9 +25,18 @@ const ConsolePage = () => {
       <>
       <h1>{selectedConsole.consoles.name}</h1>
       <AddGameForm/>
-      <GameCard games={selectedConsole.games}/>
+      {selectedConsole.games.map((game) => {
+          return (
+              <GameCard
+                key={game.id}
+                id={game.id}
+                title={game.title}
+                condition={game.condition}
+                />
+          )
+      })}
       </>
-  )}</div>; //twice because only when selectedConsole is defined will we render the name, avoids hang ups
+  )}</div>; 
 };
 
 export default ConsolePage;

@@ -11,9 +11,18 @@ export const ContextProvider = (props) => {
       setConsoles([...consoles, console])
   }
 
-  const deleteConsole = (console) => {
-      const result = consoles.filter(e => e !== console)    //I need to pass in the ID to delete from state and render at the same time
-      setConsoles(result)
+  const deleteConsole = (id) => {
+      const consoleResult = consoles.filter(console => console.id !== id)
+      const gameResult = games.filter(game => game.console_id !== id)    
+      setConsoles(consoleResult)
+      setGames(gameResult)
+  }
+
+  const deleteGame = (id) => {
+      const gameResult = games.filter(game => game.id !== id)
+      const selectedRes = selectedConsole.games.filter(game => game.id !== id)
+      setGames(gameResult)
+      setSelectedConsole([...selectedConsole.consoles, selectedRes])   //will this crash?
   }
 
   return (
@@ -27,6 +36,7 @@ export const ContextProvider = (props) => {
         setSelectedConsole,
         games,
         setGames,
+        deleteGame
       }}
     >
       {props.children}
