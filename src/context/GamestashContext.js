@@ -8,27 +8,24 @@ export const ContextProvider = (props) => {
   const [selectedConsole, setSelectedConsole] = useState(null);
 
   const addConsole = (console) => {
-      setConsoles([...consoles, console])
-  }
+    setConsoles([...consoles, console]);
+  };
 
   const addGame = (game) => {
-      setGames([...games, game])
-    //   setSelectedConsole([...selectedConsole.consoles, ...selectedConsole.games, game])
-  }
+    setGames([...games, game]);
+  };
 
   const deleteConsole = (id) => {
-      const consoleResult = consoles.filter(console => console.id !== id)
-      const gameResult = games.filter(game => game.console_id !== id)    
-      setConsoles(consoleResult)
-      setGames(gameResult)
-  }
+    const consoleResult = consoles.filter((console) => console.id !== id);
+    const gameResult = games.filter((game) => game.console_id !== id);
+    setConsoles(consoleResult);
+    setGames(gameResult);
+  };
 
   const deleteGame = (id) => {
-      const gameResult = games.filter(game => game.id !== id)
-      const selectedRes = selectedConsole.games.filter(game => game.id !== id)
-      setGames(gameResult)
-      setSelectedConsole([...selectedConsole.consoles, selectedRes])   //will this crash?
-  }
+    const gameResult = games.filter((game) => game.id !== id);
+    setGames(gameResult);
+  };
 
   return (
     <GamestashContext.Provider
@@ -42,7 +39,7 @@ export const ContextProvider = (props) => {
         games,
         setGames,
         deleteGame,
-        addGame
+        addGame,
       }}
     >
       {props.children}

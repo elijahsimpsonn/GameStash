@@ -8,14 +8,15 @@ import AddGameForm from "../../components/AddGameForm/AddGameForm";
 
 const ConsolePage = () => {
   const { id } = useParams();
-  const { selectedConsole, setSelectedConsole } = useContext(GamestashContext);
+  const { selectedConsole, setSelectedConsole, games, setGames } = useContext(
+    GamestashContext
+  );
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await Main.get(`/consoles/${id}`);
         setSelectedConsole(response.data.data);
-        console.log(selectedConsole.games)
       } catch (err) {
         console.log(err);
       }
@@ -23,22 +24,40 @@ const ConsolePage = () => {
     fetchData();
   }, []);
 
-  return <div>{selectedConsole && (
-      <>
-      <h1>{selectedConsole.consoles.name}</h1>
-      <AddGameForm/>
-      {selectedConsole.games.map((game) => {
-          return (
+  useEffect(() => {
+    const fetchGames = async () => {
+      try {
+        const response = await Main.get("/games");
+        setGames(response.data.data.games);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchGames();
+  }, []);
+
+  const currentGames = games.filter((game) => game.console_id === id);
+
+  return (
+    <div>
+      {selectedConsole && (
+        <>
+          <h1>{selectedConsole.consoles.name}</h1>
+          <AddGameForm />
+          {currentGames.map((game) => {
+            return (
               <GameCard
                 key={game.id}
                 id={game.id}
                 title={game.title}
                 condition={game.condition}
-                />
-          )
-      })}
-      </>
-  )}</div>; 
+              />
+            );
+          })}
+        </>
+      )}
+    </div>
+  );
 };
 
 export default ConsolePage;

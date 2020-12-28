@@ -7,14 +7,18 @@ import { GamestashContext } from "../../context/GamestashContext";
 import AddConsoleForm from "../../components/AddConsoleForm/AddConsoleForm";
 
 export default function Dashboard(props) {
-  const { consoles, setConsoles, games, setGames } = useContext(GamestashContext);
+  const { consoles, setConsoles, games, setGames } = useContext(
+    GamestashContext
+  );
 
   useEffect(() => {
     const fetchConsoles = async () => {
       try {
         const response = await Main.get("/consoles");
         setConsoles(response.data.data.consoles);
-      } catch (err) {}
+      } catch (err) {
+        console.log(err);
+      }
     };
     fetchConsoles();
   }, []);
@@ -35,7 +39,7 @@ export default function Dashboard(props) {
     <div>
       <>
         <section className="tally">
-            <span>Total Games: {games.length}</span>
+          <span>Total Games: {games.length}</span>
         </section>
 
         <section>
