@@ -5,6 +5,7 @@ import { GamestashContext } from "../../context/GamestashContext";
 import Main from "../../api/Main";
 import GameCard from "../../components/GameCard/GameCard";
 import AddGameForm from "../../components/AddGameForm/AddGameForm";
+import "./ConsolePage.css"
 
 const ConsolePage = () => {
   const { id } = useParams();
@@ -16,7 +17,7 @@ const ConsolePage = () => {
     const fetchData = async () => {
       try {
         const response = await Main.get(`/consoles/${id}`);
-        setSelectedConsole(response.data.data);
+        setSelectedConsole(response.data);
       } catch (err) {
         console.log(err);
       }
@@ -28,7 +29,7 @@ const ConsolePage = () => {
     const fetchGames = async () => {
       try {
         const response = await Main.get("/games");
-        setGames(response.data.data.games);
+        setGames(response.data);
       } catch (err) {
         console.log(err);
       }
@@ -42,7 +43,7 @@ const ConsolePage = () => {
     <div>
       {selectedConsole && (
         <>
-          <h1>{selectedConsole.consoles.name}</h1>
+          <h1 className="console_title">{selectedConsole.name}</h1>
           <AddGameForm />
           {currentGames.map((game) => {
             return (

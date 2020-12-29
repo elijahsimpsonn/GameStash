@@ -4,7 +4,7 @@ import './Header.css'
 export default function Header() {
     return (
         <header className="header">
-            <h1>GameStash</h1>
+            <h1 className="title">GameStash</h1>
         </header>
     )
 }

@@ -12,6 +12,7 @@
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 5px;
     padding: 5px 0px;
     background-image: linear-gradient(300deg, #FF6B6B 0%, #4281A4 100%);
     border-radius: 10px;
@@ -23,6 +24,8 @@
     margin-left: 5px;
 }
 
-.card button {
-    font-size: 12px;
+.game-card button {
+    border-radius: 1px;
+    margin-left: 3px;
+    margin-top: 3px;
 }

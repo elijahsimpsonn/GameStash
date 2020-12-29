@@ -1,5 +1,6 @@
 import React from 'react'
 import GameEditComp from '../../components/GameEditComp/GameEditComp'
+import './GameEdit.css'
 
 const GameEdit = () => {
     return (

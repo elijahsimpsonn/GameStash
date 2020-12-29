@@ -22,12 +22,15 @@ const GameEditComp = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        if(title === "" || condition === "") {
+            alert('Must have title and condition')
+        } else {
         await Main.patch(`/games/${id}`, {
             title,
             condition
         })
         browserHistory.go(-1)
-    }
+    }}
 
     return (
         <div>

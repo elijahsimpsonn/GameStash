@@ -15,7 +15,7 @@ export default function Dashboard(props) {
     const fetchConsoles = async () => {
       try {
         const response = await Main.get("/consoles");
-        setConsoles(response.data.data.consoles);
+        setConsoles(response.data)
       } catch (err) {
         console.log(err);
       }
@@ -27,7 +27,7 @@ export default function Dashboard(props) {
     const fetchGames = async () => {
       try {
         const response = await Main.get("/games");
-        setGames(response.data.data.games);
+        setGames(response.data);
       } catch (err) {
         console.log(err);
       }

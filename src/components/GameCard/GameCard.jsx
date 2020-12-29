@@ -11,7 +11,6 @@ const GameCard = (props) => {
   const handleDelete = async (id) => {
     try {
       await Main.delete(`/games/${id}`);
-      console.log(id);
       deleteGame(id);
     } catch (err) {
       console.log(err);

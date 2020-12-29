@@ -6,6 +6,7 @@ import Dashboard from './routes/Dashboard/Dashboard'
 import ConsolePage from './routes/ConsolePage/ConsolePage'
 import GameEdit from './routes/GameEdit/GameEdit'
 import Header from './components/Header/Header'
+import './app.css'
 
 const App = () => {
     return (

@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import Main from "../../api/Main";
 import { useParams } from "react-router-dom";
 import { GamestashContext } from "../../context/GamestashContext";
+import "./AddGameForm.css";
 
 const AddGameForm = () => {
   const { id } = useParams();
@@ -11,14 +12,18 @@ const AddGameForm = () => {
 
   const handleSubmitGame = async (e) => {
     e.preventDefault();
-    try {
-      const response = await Main.post(`/consoles/${id}/addGame`, {
-        title,
-        condition,
-      });
-      addGame(response.data.data.game);
-    } catch (err) {
-      console.log(err);
+    if (title === "" || condition === "") {
+      alert("Must have title and condition");
+    } else {
+      try {
+        const response = await Main.post(`/consoles/${id}/addGame`, {
+          title,
+          condition,
+        });
+        addGame(response.data);
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
 
