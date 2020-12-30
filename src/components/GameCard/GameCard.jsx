@@ -22,16 +22,14 @@ const GameCard = (props) => {
   };
 
   return (
-    <div>
       <div className="game-card">
         <span>{props.title}</span>
         <br />
         <span>{props.condition}</span>
         <br />
-        <button onClick={() => handleUpdate(props.id)}>Edit</button>
-        <button onClick={() => handleDelete(props.id)}>Delete</button>
+        <button area-label="Edit" onClick={() => handleUpdate(props.id)}>Edit</button>
+        <button area-label="Delete" onClick={() => handleDelete(props.id)}>Delete</button>
       </div>
-    </div>
   );
 };
 

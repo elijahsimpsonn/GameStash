@@ -38,13 +38,12 @@ export default function Dashboard(props) {
   const currentConsoles = consoles.sort((a, b) => (a.name > b.name ? 1 : -1));
 
   return (
-    <div>
-      <>
-        <section className="tally">
+      <section>
+        <div className="tally">
           <span>Total Games: {games.length}</span>
-        </section>
+        </div>
 
-        <section>
+        <>
           <AddConsoleForm />
           {currentConsoles.map((console) => {
             return (
@@ -55,8 +54,7 @@ export default function Dashboard(props) {
               />
             );
           })}
-        </section>
-      </>
-    </div>
+        </>
+      </section>
   );
 }

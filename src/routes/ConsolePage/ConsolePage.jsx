@@ -42,12 +42,12 @@ const ConsolePage = () => {
   const currentGames = filterGames.sort((a, b) => (a.title > b.title ? 1 : -1));
 
   return (
-    <div>
+    <section>
       {selectedConsole && (
         <>
           <h1 className="console_title">{selectedConsole.name}</h1>
           <AddGameForm />
-          <Link to={"/dashboard"}><button>Home</button></Link>
+          <Link to={"/dashboard"}><button aria-label="Home">Home</button></Link>
           {currentGames.map((game) => {
             return (
               <GameCard
@@ -60,7 +60,7 @@ const ConsolePage = () => {
           })}
         </>
       )}
-    </div>
+    </section>
   );
 };
 

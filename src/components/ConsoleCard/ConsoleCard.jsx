@@ -24,8 +24,8 @@ export default function ConsoleCard(props) {
     <div className="console-card">
       <span>{props.name}</span>
       <br />
-      <button onClick={() => handleConsoleSelect(props.id)}>Games</button>
-      <button onClick={() => handleDelete(props.id)}>Delete</button>
+      <button area-label="Games" onClick={() => handleConsoleSelect(props.id)}>Games</button>
+      <button area-aria-label="Delete" onClick={() => handleDelete(props.id)}>Delete</button>
     </div>
   );
 }

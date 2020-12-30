@@ -28,23 +28,25 @@ const AddGameForm = () => {
   };
 
   return (
-    <div>
+    <>
       <form action="">
         <input
+          aria-label="Game Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           type="text"
           placeholder="title"
         />
         <input
+          aria-label="Game Condition"
           value={condition}
           onChange={(e) => setCondition(e.target.value)}
           type="text"
           placeholder="condition"
         />
-        <button onClick={handleSubmitGame}>Add Game</button>
+        <button aria-label="Add Game" onClick={handleSubmitGame}>Add Game</button>
       </form>
-    </div>
+    </>
   );
 };
 

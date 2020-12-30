@@ -35,9 +35,10 @@ const GameEditComp = (props) => {
   };
 
   return (
-    <div>
+    <>
       <form action="">
         <input
+          area-label="Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           type="text"
@@ -45,17 +46,18 @@ const GameEditComp = (props) => {
         />
         <br />
         <input
+          area-label="Condition"
           value={condition}
           onChange={(e) => setCondition(e.target.value)}
           type="text"
           placeholder="Condition"
         />
         <br />
-        <button tyoe="submit" onClick={handleSubmit}>
+        <button area-label="Submit" type="submit" onClick={handleSubmit}>
           Submit
         </button>
       </form>
-    </div>
+    </>
   );
 };
 

@@ -19,18 +19,20 @@ export default function AddConsoleForm() {
   };
 
   return (
-    <div>
+    <>
       <form action="">
         <input
+          aria-label="Console Name"
+          aria-required="true"
           value={name}
           onChange={(e) => setName(e.target.value)}
           type="text"
           placehold="name"
         />
-        <button type="submit" onClick={handleSubmit}>
+        <button aria-label="Submit" type="submit" onClick={handleSubmit}>
           Add Console
         </button>
       </form>
-    </div>
+    </>
   );
 }

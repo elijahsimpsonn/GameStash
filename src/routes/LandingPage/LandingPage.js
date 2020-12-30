@@ -30,7 +30,7 @@ export default function LandingPage() {
       </p>
 
       <p>Click below to get started!</p>
-        <Link className="start" to={"/dashboard"}><button>Start</button></Link>
+        <Link className="start" to={"/dashboard"}><button aria-label="Start">Start</button></Link>
     </>
   );
 }
