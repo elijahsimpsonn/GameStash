@@ -2,8 +2,8 @@
 
 ## https://gamestash.netlify.app/
 
-[<img src="https://ibb.co/GV6w7by"/>][dashboard]
-[<img src="https://ibb.co/XzNYDms"/>][consolepage]
+![dashboard](screenshots\dashboard.png)
+![consolepage](screenshots\consolepage.png)
 
 <p>This is GameStash, an application for keeping track of your game collection!</p>
 <p>You can create and delete consoles, and create, edit, and delete games from the collection.</p>
