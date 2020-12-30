@@ -8,22 +8,19 @@
 
 */
 
-
 header {
-    text-align: center;
-    padding: 1px;
-    margin-bottom: 30px;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 20px;
-    letter-spacing: 3px;
-    border-bottom: 2px solid #252627;
-    color: #252627;
-    background-image: linear-gradient(300deg, #4281a4 0%, #d3d4d9 100%);
+  text-align: center;
+  padding: 1px;
+  margin-bottom: 30px;
+  font-family: "Bebas Neue", cursive;
+  font-size: 20px;
+  letter-spacing: 3px;
+  border-bottom: 2px solid #252627;
+  color: #252627;
+  background-image: linear-gradient(300deg, #4281a4 0%, #d3d4d9 100%);
 }
 
 .title {
-    margin-bottom: 0%;
-    color: white;
+  margin-bottom: 0%;
+  color: white;
 }
-
-

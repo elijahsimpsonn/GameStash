@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./LandingPage.css";
 
 export default function LandingPage() {
+    
   return (
     <>
       <h2>Welcome to GameStash!</h2>
@@ -29,9 +30,7 @@ export default function LandingPage() {
       </p>
 
       <p>Click below to get started!</p>
-      <button className="start">
-        <Link to={"/dashboard"}>Start</Link>
-      </button>
+        <Link className="start" to={"/dashboard"}><button>Start</button></Link>
     </>
   );
 }

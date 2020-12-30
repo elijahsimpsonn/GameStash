@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import Main from "../../api/Main";
 import { GamestashContext } from "../../context/GamestashContext";
-import "./AddConsoleForm.css";
 
 export default function AddConsoleForm() {
   const { addConsole } = useContext(GamestashContext);

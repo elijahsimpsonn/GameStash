@@ -5,7 +5,8 @@ import { GamestashContext } from "../../context/GamestashContext";
 import Main from "../../api/Main";
 import GameCard from "../../components/GameCard/GameCard";
 import AddGameForm from "../../components/AddGameForm/AddGameForm";
-import "./ConsolePage.css"
+import "./ConsolePage.css";
+import { Link } from "react-router-dom"
 
 const ConsolePage = () => {
   const { id } = useParams();
@@ -37,7 +38,8 @@ const ConsolePage = () => {
     fetchGames();
   }, []);
 
-  const currentGames = games.filter((game) => game.console_id === id);
+  const filterGames = games.filter((game) => game.console_id === id);
+  const currentGames = filterGames.sort((a, b) => (a.title > b.title ? 1 : -1));
 
   return (
     <div>
@@ -45,6 +47,7 @@ const ConsolePage = () => {
         <>
           <h1 className="console_title">{selectedConsole.name}</h1>
           <AddGameForm />
+          <Link to={"/dashboard"}><button>Home</button></Link>
           {currentGames.map((game) => {
             return (
               <GameCard

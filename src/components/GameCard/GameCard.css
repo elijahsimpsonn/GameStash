@@ -9,23 +9,30 @@
 */
 
 .game-card {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5px;
-    padding: 5px 0px;
-    background-image: linear-gradient(300deg, #FF6B6B 0%, #4281A4 100%);
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px #4281A4;
-    color: #d3d4d9;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  padding: 5px 0px;
+  background-image: linear-gradient(300deg, #ff6b6b 0%, #4281a4 100%);
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #4281a4;
+  color: #d3d4d9;
 }
 
 .game_del_btn {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .game-card button {
-    border-radius: 1px;
-    margin-left: 3px;
-    margin-top: 3px;
+  border-radius: 1px;
+  margin-left: 3px;
+  margin-top: 3px;
+}
+
+@media only screen and (min-width: 600px) {
+    .game-card {
+        width: 50%;
+        margin-top: 10px;
+    }
 }

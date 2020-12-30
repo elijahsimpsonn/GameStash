@@ -14,7 +14,7 @@
 .tally {
   margin-bottom: 40px;
   position: relative;
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
   font-size: 25px;
 }
 
@@ -33,17 +33,6 @@
   position: relative;
 }
 
-/* .tally:after {
-    content: "";
-    position: absolute;
-    width: 50%;
-    left: 25%;
-    bottom: -20px;
-    border-bottom: 1px solid #4281a4;
-    margin-top: -20px;
-  } */
-
 .search_button {
   margin-left: 5px;
 }
-

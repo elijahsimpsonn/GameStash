@@ -12,25 +12,20 @@ export default function ConsoleCard(props) {
   const handleDelete = async (id) => {
     try {
       await Main.delete(`/consoles/${id}`);
-      deleteConsole(id);     //response.data.data.console
+      deleteConsole(id);
     } catch (err) {}
   };
 
   const handleConsoleSelect = (id) => {
-    history.push(`/consoles/${id}`); //pushes this to the history stack, need more in depth understanding on how this works
+    history.push(`/consoles/${id}`);
   };
 
   return (
     <div className="console-card">
-      <span>{props.name}</span>   
+      <span>{props.name}</span>
       <br />
-      {/* <span>Total Games</span> */}
-      <br />
-      <button onClick={() => handleConsoleSelect(props.id)}>Games</button>  
-      <button onClick={() => handleDelete(props.id)}>Delete</button> 
+      <button onClick={() => handleConsoleSelect(props.id)}>Games</button>
+      <button onClick={() => handleDelete(props.id)}>Delete</button>
     </div>
   );
 }
-//Line 27 shows the console name on the card, coming in as a prop from Dashboard
-//Line 31 onClick runs consoleSelect from above and sends in the ID it gets from the Dashboard as a prop
-//Line 32 onClick runs delete from above and sends in the ID it gets from the Dashboard as a prop

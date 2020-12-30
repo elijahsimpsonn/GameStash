@@ -15,7 +15,7 @@ export default function Dashboard(props) {
     const fetchConsoles = async () => {
       try {
         const response = await Main.get("/consoles");
-        setConsoles(response.data)
+        setConsoles(response.data);
       } catch (err) {
         console.log(err);
       }
@@ -35,6 +35,8 @@ export default function Dashboard(props) {
     fetchGames();
   }, []);
 
+  const currentConsoles = consoles.sort((a, b) => (a.name > b.name ? 1 : -1));
+
   return (
     <div>
       <>
@@ -44,7 +46,7 @@ export default function Dashboard(props) {
 
         <section>
           <AddConsoleForm />
-          {consoles.map((console) => {
+          {currentConsoles.map((console) => {
             return (
               <ConsoleCard
                 key={console.id}
