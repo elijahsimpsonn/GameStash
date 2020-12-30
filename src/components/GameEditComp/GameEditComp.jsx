@@ -14,8 +14,8 @@ const GameEditComp = (props) => {
     const fetchData = async () => {
       try {
         const response = await Main.get(`/games/${id}`);
-        setTitle(response.data.games.title);
-        setCondition(response.data.games.condition);
+        setTitle(response.data.title);
+        setCondition(response.data.condition);
       } catch (err) {}
     };
     fetchData();
