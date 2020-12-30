@@ -14,6 +14,7 @@ export default function AddConsoleForm() {
       try {
         const response = await Main.post("/consoles", { name });
         addConsole(response.data);
+        setName('')
       } catch (err) {}
     }
   };

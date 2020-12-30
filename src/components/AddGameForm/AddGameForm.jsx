@@ -21,6 +21,8 @@ const AddGameForm = () => {
           condition,
         });
         addGame(response.data);
+        setTitle('')
+        setCondition('')
       } catch (err) {
         console.log(err);
       }
