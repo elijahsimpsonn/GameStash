@@ -28,7 +28,7 @@ export default function ConsoleCard(props) {
     <div className="console-card">
       <span>{props.name}</span>
       <br />
-      <span>{gameTotal.length} {totalText}</span>
+      <span>{gameTotal} {totalText}</span>
       <br />
       <button area-label="Games" onClick={() => handleConsoleSelect(props.id)}>Games</button>
       <button area-aria-label="Delete" onClick={() => handleDelete(props.id)}>Delete</button>
