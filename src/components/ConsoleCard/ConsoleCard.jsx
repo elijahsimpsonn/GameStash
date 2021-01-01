@@ -21,8 +21,8 @@ export default function ConsoleCard(props) {
   };
 
   const gameTotal = games.filter((game) => game.console_id === props.id)
-  const totalText = gameTotal.length > 1 ? 'Games' : "Game"
-
+  const totalText = gameTotal.length > 1 ? 'Games' : gameTotal.length === 1 ? 'Game' : ""
+ 
   return (
     <div className="console-card">
       <span>{props.name}</span>
