@@ -20,8 +20,9 @@ export default function ConsoleCard(props) {
     history.push(`/consoles/${id}`);
   };
 
-  const gameTotal = games.filter((game) => game.console_id === props.id)
-  const totalText = gameTotal.length > 1 ? 'Games' : gameTotal.length === 1 ? 'Game' : ""
+  const getGameTotal = games.filter((game) => game.console_id === props.id)
+  const gameTotal = getGameTotal.length > 1 ? getGameTotal.length : ""
+  const totalText = getGameTotal.length > 1 ? 'Games' : getGameTotal.length === 1 ? 'Game' : ""
  
   return (
     <div className="console-card">
