@@ -21,15 +21,17 @@ export default function ConsoleCard(props) {
   };
 
   const gameTotal = games.filter((game) => game.console_id === props.id)
+  const totalText = gameTotal.length > 1 ? 'Games' : "Game"
 
   return (
     <div className="console-card">
       <span>{props.name}</span>
       <br />
-      <span>{gameTotal.length} Games</span>
+      <span>{gameTotal.length} {totalText}</span>
       <br />
       <button area-label="Games" onClick={() => handleConsoleSelect(props.id)}>Games</button>
       <button area-aria-label="Delete" onClick={() => handleDelete(props.id)}>Delete</button>
     </div>
   );
 }
+
