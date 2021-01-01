@@ -25,6 +25,7 @@ export default function ConsoleCard(props) {
   return (
     <div className="console-card">
       <span>{props.name}</span>
+      <br />
       <span>{gameTotal.length} Games</span>
       <br />
       <button area-label="Games" onClick={() => handleConsoleSelect(props.id)}>Games</button>
